@@ -11,15 +11,28 @@
   your inner loop and it should handle the rest for you!
   
   And you put xdescribe instead of describe if you want to suspend running the unit tests.  
+
+  Reference: https://btholt.github.io/complete-intro-to-computer-science/insertion-sort
 */
 
 function insertionSort(nums) {
-  // code goes here
+  let numberBeingCompared;
+  let j;
+
+  for (let i = 1; i < nums.length; i++) {
+    numberBeingCompared = nums[i];
+
+    for (j = i - 1; nums[j] > numberBeingCompared && j >= 0; j--) {
+      nums[j + 1] = nums[j];
+    }
+
+    nums[j + 1] = numberBeingCompared;
+  }
 }
 
 // unit tests
 // do not modify the below code
-test.skip("insertion sort", function () {
+test('insertion sort', function () {
   const nums = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
   insertionSort(nums);
   expect(nums).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
