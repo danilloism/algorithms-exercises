@@ -7,6 +7,7 @@
   example: nestedAdd([1, 2, [3]]) = 6
            nestedAdd([[[2]], 1, [1, 3]]) = 7
  
+  Reference: https://btholt.github.io/complete-intro-to-computer-science/recursion
  */
 
 function nestedAdd(array) {
