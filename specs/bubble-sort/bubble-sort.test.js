@@ -14,11 +14,12 @@
 
 function bubbleSort(nums) {
   let swapped;
+  let outIterations = 0;
 
   do {
     swapped = false;
 
-    for (let i = 0; i < nums.length - 1; i++) {
+    for (let i = 0; i < nums.length - outIterations - 1; i++) {
       if (nums[i] > nums[i + 1]) {
         const tmp = nums[i];
         nums[i] = nums[i + 1];
@@ -27,6 +28,8 @@ function bubbleSort(nums) {
         swapped = true;
       }
     }
+
+    outIterations++;
   } while (swapped);
 
   return nums;
